@@ -1,17 +1,18 @@
-#!/bin/bash -x
+#! /bin/bash
 
-checkEMP=$(($RANDOM%2))
-IS_PRESENT=1
-if [ $checkEMP -eq $IS_PRESENT ]
-then
-empHrs=8
-EMP_RATE_PER_HR=20
+IS_PRESENT=1;
+IS_PART=2;
+EMP_RATE_PER_HR=20;
+checkEmp=$((RANDOM%3))
+case $checkEmp in
+$IS_PRESENT) empHrs=8;
+;;
+$IS_PART) empHrs=4
+;;
+*) empHrs=0
+;;
 
-echo "employee is present"
-#salary=$((empHrs*EMP_RATE_PER_HR))
-else
-echo "employee is absent"
-fi
+esac
+
 salary=$((empHrs*EMP_RATE_PER_HR))
 echo "Salary=$salary"
-
