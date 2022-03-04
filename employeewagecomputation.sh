@@ -1,12 +1,12 @@
 #!/bin/bash -x
 
 checkEMP=$(($RANDOM%1))
+IS_PRESENT=1
+if [ $checkEMP -eq $IS_PRESENT]
 
-if [ $checkEMP -eq 1]
-
-echo "emploee is present"
+echo "employee is present"
 then
-echo "emploee is absent"
+echo "employee is absent"
 fi
 
 
